@@ -4,7 +4,8 @@
   "description": "A simple todo list app",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "watchify src/app.js -t [babelify --presets [ es2015 react ] ] -o build/bundle.js",
+    "build": "browserify src/app.js -t [babelify --presets [ es2015 react ] ] -o build/bundle.js"
   },
   "author": "Himanshu Purohit",
   "license": "ISC",
@@ -19,9 +20,5 @@
     "babelify": "^7.3.0",
     "browserify": "^14.1.0",
     "watchify": "^3.9.0"
-  },
-  "scripts": {
-    "watch": "watchify src/app.js -t [babelify --presets [ es2015 react ] ] -o build/bundle.js",
-    "build": "browserify src/app.js -t [babelify --presets [ es2015 react ] ] -o build/bundle.js"
   }
 }
